@@ -24,33 +24,37 @@ window.addEventListener("popstate", function() {
 
 <style>
   html, body {
-    height: 100%; /* Membuat HTML dan Body setinggi layar */
+    height: 100%;
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #000000;
   }
   body {
-    display: flex; /* Mengaktifkan Flexbox */
-    justify-content: center; /* Menengahkan secara horizontal */
-    align-items: center; /* Menengahkan secara vertikal */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Tetap di tengah untuk tampilan PC */
     padding: 20px;
+    box-sizing: border-box;
   }
   .container {
     max-width: 500px;
-    width: 100%; /* Agar container responsif */
+    width: 100%;
     padding: 20px;
-    box-sizing: border-box; /* Agar padding tidak menambah ukuran total */
+    box-sizing: border-box;
   }
   .img-crop {
-    text-align: center; /* Menengahkan gambar di dalam div */
+    text-align: center;
   }
   .img-crop img {
-    max-width: 100%; /* Membuat gambar responsif */
+    max-width: 100%;
     height: auto;
   }
+
+  /* --- PERUBAHAN UNTUK TAMPILAN PONSEL --- */
   @media (max-width: 600px) {
     body {
-      padding: 10px;
+      align-items: flex-start; /* Posisikan konten ke bagian ATAS */
+      padding-top: 20vh; /* Beri jarak dari atas sebesar 20% tinggi layar */
     }
     .container {
       padding: 15px;
